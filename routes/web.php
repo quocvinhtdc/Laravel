@@ -14,6 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/demo', function () {
-    return view('welcome');
-});
+
+Route::get('/demo','Democontroller@index');
+//file này là router điều hướng domain của web ha. toàn bộ router nếu muốn hiểu thì phải khai báo ở đây
