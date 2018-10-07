@@ -8,6 +8,6 @@ class DemoController extends Controller
 {
     public function index()
     {
-        return "1234352536";
+        return "Cai quan qe";
     }
 }
