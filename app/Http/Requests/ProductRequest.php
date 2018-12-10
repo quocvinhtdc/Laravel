@@ -24,7 +24,7 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required', // không đc trùng nhau, ko đc để trống
+            'name' => 'required|regex:/^[A-Za-z0-9_\.]{6,32}$/', // không đc trùng nhau, ko đc để trống
             'fileToUpLoad'  => 'required|image|max:10000',
             'price'  => 'required',
             'description'  => 'required'
@@ -38,7 +38,8 @@ class ProductRequest extends FormRequest
             'fileToUpLoad.max'  => 'max size is 10000kb' ,
             'fileToUpLoad.image'     => 'This file is not image' ,
             'price.required'   => 'Please enter price',
-            'description.required'   => 'Please enter description'
+            'description.required'   => 'Please enter description',
+            'name.regex' => 'ProductName error Syntax' 
         ];
     }
 }
